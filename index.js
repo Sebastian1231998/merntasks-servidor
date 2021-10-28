@@ -14,7 +14,13 @@ const port = process.env.port || 4000;
 //usar json
 app.use(express.json({extended:true}))
 
-app.use(cors());  
+const corsOptions ={
+    origin:'*', 
+    credentials:true,            //access-control-allow-credentials:true
+    optionSuccessStatus:200,
+ }
+
+app.use(cors(corsOptions));  
 
 //importar el routing 
 
