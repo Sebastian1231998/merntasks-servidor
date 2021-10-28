@@ -7,19 +7,16 @@ const cors = require('cors');
 const conectarDB = require('./config/db');
 
 
-conectarDB()
+conectarDB(); 
 
-const port = process.env.port || 4000;
+
 
 //usar json
 app.use(express.json({extended:true}))
 
-const corsOptions ={
-    origin:'*', 
-    credentials:true,            //access-control-allow-credentials:true
-    optionSuccessStatus:200,
- }
+
 //importar el routing 
+
 
 app.options('*', cors())
 
@@ -29,9 +26,9 @@ app.use('/api/proyectos', require('./routes/proyectos'))
 app.use('/api/tareas', require('./routes/tareas'))
 
 
-app.listen( port , '0.0.0.0' ,  ()=>{
+app.listen( process.env.PORT  || 4000 , '0.0.0.0' ,  ()=>{
 
- console.log("servidor funcionando: " + port)
+ console.log("servidor funcionando: " + process.env.PORT  || 4000)
 });
 
 
