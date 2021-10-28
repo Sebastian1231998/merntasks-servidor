@@ -15,8 +15,7 @@ const port = process.env.port || 4000;
 app.use(express.json({extended:true}))
 
 const corsOptions ={
-    origin:'*', 
-    credentials:true,            //access-control-allow-credentials:true
+    origin:'*',
     optionSuccessStatus:200,
  }
 
