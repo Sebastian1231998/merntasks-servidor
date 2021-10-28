@@ -11,6 +11,7 @@ conectarDB();
 
 
 
+app.use(cors())
 //usar json
 app.use(express.json({extended:true}))
 
@@ -18,7 +19,6 @@ app.use(express.json({extended:true}))
 //importar el routing 
 
 
-app.options('*', cors())
 
 app.use('/api/usuarios', require('./routes/usuarios'))
 app.use('/api/auth', require('./routes/auth'))

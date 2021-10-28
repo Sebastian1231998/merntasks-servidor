@@ -15,6 +15,7 @@ exports.validarUsuarios = async (req, res) => {
 
     let usuario = await Usuario.findOne({ email });
 
+    console.log(usuario)
     if (!usuario) {
       return res.status(400).json({ msg: "usuario no existe" });
     }
